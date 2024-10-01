@@ -12,5 +12,5 @@
    5. Join Operations: Retrieved data by joining tables (e.g., employees and their respective departments, employees and projects).
 
    ## Screenshots
-   aove are the codes and the screenshots of the SQL commands and their outputs uploaded in the file above .
+   above are the codes and the screenshots of the SQL commands and their outputs uploaded in the file above .
 
