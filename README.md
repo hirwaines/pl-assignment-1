@@ -12,8 +12,7 @@
    5. Join Operations: Retrieved data by joining tables (e.g., employees and their respective departments, employees and projects).
 
    ## Screenshots
-   above are the codes and the screenshots of the SQL commands and their outputs uploaded in the file above .
-    codes are:
+   those are the codes :
      CREATE TABLE Departments (
        DepartmentID INT PRIMARY KEY,
        DepartmentName VARCHAR(50) NOT NULL
