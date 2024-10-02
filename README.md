@@ -13,4 +13,73 @@
 
    ## Screenshots
    above are the codes and the screenshots of the SQL commands and their outputs uploaded in the file above .
+    codes are:
+     CREATE TABLE Departments (
+       DepartmentID INT PRIMARY KEY,
+       DepartmentName VARCHAR(50) NOT NULL
+   );
+
+   create
+   
+ CREATE TABLE Employees (
+       EmployeeID INT PRIMARY KEY,
+       FirstName VARCHAR(50),
+       LastName VARCHAR(50),
+       DepartmentID INT,
+       FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+   );
+   
+   create
+   
+ CREATE TABLE Projects (
+       ProjectID INT PRIMARY KEY,
+       ProjectName VARCHAR(100)
+   );
+
+   create
+   
+ CREATE TABLE Employee_Project_Assignments (
+       AssignmentID INT PRIMARY KEY,
+       EmployeeID INT,
+       ProjectID INT,
+       FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+       FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+   );
+   
+   insert
+   
+ INSERT INTO Departments (DepartmentID, DepartmentName) 
+   VALUES (1, 'Human Resources'), (2, 'Engineering'), (3, 'Sales');
+  INSERT INTO Employees (EmployeeID, FirstName, LastName, DepartmentID) 
+   VALUES (1, 'John', 'Doe', 2), (2, 'Jane', 'Smith', 1), (3, 'Michael', 'Johnson', 3);
+  INSERT INTO Projects (ProjectID, ProjectName) 
+   VALUES (1, 'Project A'), (2, 'Project B');
+ INSERT INTO Employee_Project_Assignments (AssignmentID, EmployeeID, ProjectID) 
+   VALUES (1, 1, 1), (2, 2, 2), (3, 3, 1);
+   
+   update
+   
+  UPDATE Employees 
+   SET LastName = 'Brown' 
+   WHERE EmployeeID = 1;
+   
+   delete
+   
+ DELETE FROM Employee_Project_Assignments 
+   WHERE AssignmentID = 2;
+   
+   inner join
+
+  SELECT Employees.FirstName, Employees.LastName, Departments.DepartmentName 
+   FROM Employees 
+   INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+   
+inner join 
+
+ SELECT Employees.FirstName, Projects.ProjectName 
+   FROM Employees 
+   INNER JOIN Employee_Project_Assignments ON Employees.EmployeeID = Employee_Project_Assignments.EmployeeID
+   INNER JOIN Projects ON Employee_Project_Assignments.ProjectID = Projects.ProjectID;
+   
+
 
